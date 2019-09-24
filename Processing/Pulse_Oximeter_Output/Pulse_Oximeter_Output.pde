@@ -9,8 +9,9 @@ int i = 1;
 void setup()
 {
   printArray(Arduino.list());
-  arduino = new Arduino(this, Arduino.list()[0], 57600);
-  fullScreen();
+  arduino = new Arduino(this, Arduino.list()[2], 57600);
+  //fullScreen();
+  size(1000, 500);
   background(102);  
   arduino.pinMode(sensor,Arduino.INPUT);
   data = new int[width];
@@ -21,7 +22,7 @@ void draw()
   stroke(255);
   int raw = arduino.analogRead(sensor);
   //println(raw);
-  float filter = map(raw, 0, 850, 0, height);
+  float filter = map(raw, 350, 450, 0, height);
   data [i] = (int)filter;
   data[0] = data[1];
   //println(data[i]);
