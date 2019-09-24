@@ -63,7 +63,7 @@ void plotValues(){
 }
 
 int getY(int val){
-  int mapVal = (int) map(val, 0, 1023, 0, height);
+  int mapVal = (int) map(val, 350, 650, 0, height);
   int y = height - mapVal;
   
   return y;
