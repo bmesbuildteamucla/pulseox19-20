@@ -18,7 +18,7 @@ void setup() {
   // Modify this line, by changing the "0" to the index of the serial
   // port corresponding to your Arduino board (as it appears in the list
   // printed by the line above).
-  arduino = new Arduino(this, Arduino.list()[2], 57600);
+  arduino = new Arduino(this, Arduino.list()[0], 57600);
   
   values = new int[width];
   for (int i = 0; i < values.length; i++){
@@ -63,7 +63,7 @@ void plotValues(){
 }
 
 int getY(int val){
-  int mapVal = (int) map(val, 350, 650, 0, height);
+  int mapVal = (int) map(val, 0, 1023, 0, height);
   int y = height - mapVal;
   
   return y;
